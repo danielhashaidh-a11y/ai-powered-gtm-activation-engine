@@ -1,8 +1,3 @@
-snowflake query leads
-
-Explanation of query
-
-
 WITH user_base AS (
     SELECT
         h.email,
