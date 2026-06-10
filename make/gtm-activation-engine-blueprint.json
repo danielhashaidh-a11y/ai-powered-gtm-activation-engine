@@ -1,0 +1,1848 @@
+{
+    "name": "AI Funnel Leakage Intelligence Engine",
+    "flow": [
+        {
+            "id": 52,
+            "module": "util:BasicTrigger",
+            "version": 1,
+            "parameters": {
+                "values": [
+                    {
+                        "spec": [
+                            {
+                                "name": "test",
+                                "value": "test"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": -2187,
+                    "y": -598,
+                    "name": "Daily Funnel Leakage Scan"
+                },
+                "restore": {
+                    "parameters": {
+                        "values": {
+                            "items": [
+                                {
+                                    "spec": {
+                                        "mode": "chose",
+                                        "items": [
+                                            null
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "values",
+                        "spec": [
+                            {
+                                "name": "spec",
+                                "spec": [
+                                    {
+                                        "name": "name",
+                                        "type": "text",
+                                        "label": "Name",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "value",
+                                        "type": "text",
+                                        "label": "Value",
+                                        "required": true
+                                    }
+                                ],
+                                "type": "array",
+                                "label": "Items",
+                                "required": true
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Bundles",
+                        "required": true
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "test",
+                        "type": "text",
+                        "label": "test"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 35,
+            "module": "json:ParseJSON",
+            "version": 1,
+            "parameters": {
+                "type": 590388
+            },
+            "mapper": {
+                "json": "[\r\n  {\r\n    \"use_case_name\": \"Use Case 1 - High Intent Lead Did Not Sign Up\",\r\n    \"email\": \"adam@saasgrowth.com\",\r\n    \"first_name\": \"Adam\",\r\n    \"last_name\": \"Bar\",\r\n    \"company_name\": \"SaaSGrowth\",\r\n    \"industry\": \"SaaS\",\r\n    \"company_size\": 220,\r\n    \"job_title\": \"Head of Growth\",\r\n    \"salesforce_lead_id\": \"00Q8d000009AAA\",\r\n    \"owner_id\": \"0058d000001AAA\",\r\n    \"lead_status\": \"Open\",\r\n    \"utm_source\": \"linkedin\",\r\n    \"utm_medium\": \"paid_social\",\r\n    \"utm_campaign\": \"plg_demo_campaign\",\r\n    \"utm_content\": \"carousel_ad_1\",\r\n    \"landing_page_url\": \"https://site.com/demo\",\r\n    \"referrer\": \"linkedin.com\",\r\n    \"last_page_viewed\": \"/pricing\",\r\n    \"pages_viewed\": 9,\r\n    \"visit_count\": 5,\r\n    \"time_on_site_seconds\": 780,\r\n    \"pricing_page_viewed\": true,\r\n    \"demo_page_viewed\": true,\r\n    \"signup_page_viewed\": true,\r\n    \"signup_completed_at\": null,\r\n    \"setup_completed_at\": null,\r\n    \"product_run_completed_at\": null,\r\n    \"team_member_added_at\": null,\r\n    \"stuck_stage\": \"lead_not_signed_up\",\r\n    \"days_stuck\": 0,\r\n    \"engagement_score\": 90,\r\n    \"leakage_score\": 75,\r\n    \"risk_level\": \"high_risk\",\r\n    \"suggested_action\": \"send_signup_conversion_email\",\r\n    \"send_to_ai\": true\r\n  },\r\n  {\r\n    \"use_case_name\": \"Use Case 2 - Enterprise Lead Did Not Sign Up\",\r\n    \"email\": \"maya@enterprisecredit.com\",\r\n    \"first_name\": \"Maya\",\r\n    \"last_name\": \"Rosen\",\r\n    \"company_name\": \"EnterpriseCredit\",\r\n    \"industry\": \"Financial Services\",\r\n    \"company_size\": 4200,\r\n    \"job_title\": \"Director of Operations\",\r\n    \"salesforce_lead_id\": \"00Q8d000009BBB\",\r\n    \"owner_id\": \"0058d000001BBB\",\r\n    \"lead_status\": \"Working\",\r\n    \"utm_source\": \"google\",\r\n    \"utm_medium\": \"paid_search\",\r\n    \"utm_campaign\": \"enterprise_credit_campaign\",\r\n    \"utm_content\": \"search_ad_2\",\r\n    \"landing_page_url\": \"https://site.com/pricing\",\r\n    \"referrer\": \"google.com\",\r\n    \"last_page_viewed\": \"/demo\",\r\n    \"pages_viewed\": 7,\r\n    \"visit_count\": 3,\r\n    \"time_on_site_seconds\": 640,\r\n    \"pricing_page_viewed\": true,\r\n    \"demo_page_viewed\": true,\r\n    \"signup_page_viewed\": false,\r\n    \"signup_completed_at\": null,\r\n    \"setup_completed_at\": null,\r\n    \"product_run_completed_at\": null,\r\n    \"team_member_added_at\": null,\r\n    \"stuck_stage\": \"lead_not_signed_up\",\r\n    \"days_stuck\": 0,\r\n    \"engagement_score\": 85,\r\n    \"leakage_score\": 70,\r\n    \"risk_level\": \"high_risk\",\r\n    \"suggested_action\": \"create_salesforce_task_and_notify_slack\",\r\n    \"send_to_ai\": true\r\n  },\r\n  {\r\n    \"use_case_name\": \"Use Case 3 - Setup Not Completed\",\r\n    \"email\": \"jon@retailai.com\",\r\n    \"first_name\": \"Jon\",\r\n    \"last_name\": \"Cohen\",\r\n    \"company_name\": \"RetailAI\",\r\n    \"industry\": \"E-commerce\",\r\n    \"company_size\": 80,\r\n    \"job_title\": \"Growth Manager\",\r\n    \"salesforce_lead_id\": \"00Q8d000009CCC\",\r\n    \"owner_id\": \"0058d000001CCC\",\r\n    \"lead_status\": \"Open\",\r\n    \"utm_source\": \"facebook\",\r\n    \"utm_medium\": \"paid_social\",\r\n    \"utm_campaign\": \"setup_demo_campaign\",\r\n    \"utm_content\": \"video_ad_1\",\r\n    \"landing_page_url\": \"https://site.com/signup\",\r\n    \"referrer\": \"facebook.com\",\r\n    \"last_page_viewed\": \"/docs\",\r\n    \"pages_viewed\": 5,\r\n    \"visit_count\": 2,\r\n    \"time_on_site_seconds\": 360,\r\n    \"pricing_page_viewed\": false,\r\n    \"demo_page_viewed\": true,\r\n    \"signup_page_viewed\": true,\r\n    \"signup_completed_at\": \"2026-06-05T08:10:00Z\",\r\n    \"setup_completed_at\": null,\r\n    \"product_run_completed_at\": null,\r\n    \"team_member_added_at\": null,\r\n    \"stuck_stage\": \"setup_not_completed\",\r\n    \"days_stuck\": 4,\r\n    \"engagement_score\": 55,\r\n    \"leakage_score\": 50,\r\n    \"risk_level\": \"warning\",\r\n    \"suggested_action\": \"send_setup_recovery_email\",\r\n    \"send_to_ai\": false\r\n  },\r\n  {\r\n    \"use_case_name\": \"Use Case 4 - Enterprise Setup Not Completed\",\r\n    \"email\": \"noa@healthops.com\",\r\n    \"first_name\": \"Noa\",\r\n    \"last_name\": \"Levi\",\r\n    \"company_name\": \"HealthOps\",\r\n    \"industry\": \"Healthcare\",\r\n    \"company_size\": 2800,\r\n    \"job_title\": \"VP Operations\",\r\n    \"salesforce_lead_id\": \"00Q8d000009DDD\",\r\n    \"owner_id\": \"0058d000001DDD\",\r\n    \"lead_status\": \"Working\",\r\n    \"utm_source\": \"linkedin\",\r\n    \"utm_medium\": \"paid_social\",\r\n    \"utm_campaign\": \"healthcare_operations_campaign\",\r\n    \"utm_content\": \"case_study_ad\",\r\n    \"landing_page_url\": \"https://site.com/demo\",\r\n    \"referrer\": \"linkedin.com\",\r\n    \"last_page_viewed\": \"/setup\",\r\n    \"pages_viewed\": 8,\r\n    \"visit_count\": 4,\r\n    \"time_on_site_seconds\": 720,\r\n    \"pricing_page_viewed\": true,\r\n    \"demo_page_viewed\": true,\r\n    \"signup_page_viewed\": true,\r\n    \"signup_completed_at\": \"2026-06-02T09:30:00Z\",\r\n    \"setup_completed_at\": null,\r\n    \"product_run_completed_at\": null,\r\n    \"team_member_added_at\": null,\r\n    \"stuck_stage\": \"setup_not_completed\",\r\n    \"days_stuck\": 7,\r\n    \"engagement_score\": 85,\r\n    \"leakage_score\": 85,\r\n    \"risk_level\": \"high_risk\",\r\n    \"suggested_action\": \"send_setup_recovery_email_create_salesforce_task_notify_slack\",\r\n    \"send_to_ai\": true\r\n  },\r\n  {\r\n    \"use_case_name\": \"Use Case 5 - Product Run Not Completed\",\r\n    \"email\": \"lior@marketpulse.com\",\r\n    \"first_name\": \"Lior\",\r\n    \"last_name\": \"Shani\",\r\n    \"company_name\": \"MarketPulse\",\r\n    \"industry\": \"SaaS\",\r\n    \"company_size\": 160,\r\n    \"job_title\": \"Product Lead\",\r\n    \"salesforce_lead_id\": \"00Q8d000009EEE\",\r\n    \"owner_id\": \"0058d000001EEE\",\r\n    \"lead_status\": \"Open\",\r\n    \"utm_source\": \"google\",\r\n    \"utm_medium\": \"paid_search\",\r\n    \"utm_campaign\": \"product_activation_campaign\",\r\n    \"utm_content\": \"search_ad_3\",\r\n    \"landing_page_url\": \"https://site.com/signup\",\r\n    \"referrer\": \"google.com\",\r\n    \"last_page_viewed\": \"/docs/getting-started\",\r\n    \"pages_viewed\": 6,\r\n    \"visit_count\": 3,\r\n    \"time_on_site_seconds\": 480,\r\n    \"pricing_page_viewed\": false,\r\n    \"demo_page_viewed\": true,\r\n    \"signup_page_viewed\": true,\r\n    \"signup_completed_at\": \"2026-06-01T10:00:00Z\",\r\n    \"setup_completed_at\": \"2026-06-02T12:20:00Z\",\r\n    \"product_run_completed_at\": null,\r\n    \"team_member_added_at\": null,\r\n    \"stuck_stage\": \"product_run_not_completed\",\r\n    \"days_stuck\": 6,\r\n    \"engagement_score\": 70,\r\n    \"leakage_score\": 65,\r\n    \"risk_level\": \"warning\",\r\n    \"suggested_action\": \"send_product_activation_email\",\r\n    \"send_to_ai\": false\r\n  },\r\n  {\r\n    \"use_case_name\": \"Use Case 6 - Enterprise Product Run Not Completed\",\r\n    \"email\": \"daniel@creditplus.com\",\r\n    \"first_name\": \"Daniel\",\r\n    \"last_name\": \"Amir\",\r\n    \"company_name\": \"CreditPlus\",\r\n    \"industry\": \"Financial Services\",\r\n    \"company_size\": 1200,\r\n    \"job_title\": \"Director of Analytics\",\r\n    \"salesforce_lead_id\": \"00Q8d000009FFF\",\r\n    \"owner_id\": \"0058d000001FFF\",\r\n    \"lead_status\": \"Working\",\r\n    \"utm_source\": \"linkedin\",\r\n    \"utm_medium\": \"paid_social\",\r\n    \"utm_campaign\": \"enterprise_analytics_campaign\",\r\n    \"utm_content\": \"linkedin_ad_2\",\r\n    \"landing_page_url\": \"https://site.com/pricing\",\r\n    \"referrer\": \"linkedin.com\",\r\n    \"last_page_viewed\": \"/product\",\r\n    \"pages_viewed\": 9,\r\n    \"visit_count\": 4,\r\n    \"time_on_site_seconds\": 850,\r\n    \"pricing_page_viewed\": true,\r\n    \"demo_page_viewed\": true,\r\n    \"signup_page_viewed\": true,\r\n    \"signup_completed_at\": \"2026-05-28T11:00:00Z\",\r\n    \"setup_completed_at\": \"2026-05-29T12:20:00Z\",\r\n    \"product_run_completed_at\": null,\r\n    \"team_member_added_at\": null,\r\n    \"stuck_stage\": \"product_run_not_completed\",\r\n    \"days_stuck\": 11,\r\n    \"engagement_score\": 90,\r\n    \"leakage_score\": 85,\r\n    \"risk_level\": \"high_risk\",\r\n    \"suggested_action\": \"send_product_activation_email_create_salesforce_task_notify_slack\",\r\n    \"send_to_ai\": true\r\n  },\r\n  {\r\n    \"use_case_name\": \"Use Case 7 - Team Invite Missing\",\r\n    \"email\": \"sarah@fintechco.com\",\r\n    \"first_name\": \"Sarah\",\r\n    \"last_name\": \"Levy\",\r\n    \"company_name\": \"FinTechCo\",\r\n    \"industry\": \"Fintech\",\r\n    \"company_size\": 350,\r\n    \"job_title\": \"VP Operations\",\r\n    \"salesforce_lead_id\": \"00Q8d000009GGG\",\r\n    \"owner_id\": \"0058d000001GGG\",\r\n    \"lead_status\": \"Open\",\r\n    \"utm_source\": \"facebook\",\r\n    \"utm_medium\": \"paid_social\",\r\n    \"utm_campaign\": \"credit_demo_campaign\",\r\n    \"utm_content\": \"video_ad_1\",\r\n    \"landing_page_url\": \"https://site.com/signup\",\r\n    \"referrer\": \"facebook.com\",\r\n    \"last_page_viewed\": \"/pricing\",\r\n    \"pages_viewed\": 8,\r\n    \"visit_count\": 4,\r\n    \"time_on_site_seconds\": 520,\r\n    \"pricing_page_viewed\": true,\r\n    \"demo_page_viewed\": true,\r\n    \"signup_page_viewed\": true,\r\n    \"signup_completed_at\": \"2026-06-01T09:20:00Z\",\r\n    \"setup_completed_at\": \"2026-06-02T10:15:00Z\",\r\n    \"product_run_completed_at\": \"2026-06-04T14:30:00Z\",\r\n    \"team_member_added_at\": null,\r\n    \"stuck_stage\": \"team_invite_missing\",\r\n    \"days_stuck\": 5,\r\n    \"engagement_score\": 90,\r\n    \"leakage_score\": 85,\r\n    \"risk_level\": \"high_risk\",\r\n    \"suggested_action\": \"send_team_invite_email_and_create_salesforce_task\",\r\n    \"send_to_ai\": true\r\n  },\r\n  {\r\n    \"use_case_name\": \"Use Case 8 - Enterprise Team Invite Missing\",\r\n    \"email\": \"ron@globalbank.com\",\r\n    \"first_name\": \"Ron\",\r\n    \"last_name\": \"Kaplan\",\r\n    \"company_name\": \"GlobalBank\",\r\n    \"industry\": \"Financial Services\",\r\n    \"company_size\": 7000,\r\n    \"job_title\": \"Head of Digital Risk\",\r\n    \"salesforce_lead_id\": \"00Q8d000009HHH\",\r\n    \"owner_id\": \"0058d000001HHH\",\r\n    \"lead_status\": \"Working\",\r\n    \"utm_source\": \"linkedin\",\r\n    \"utm_medium\": \"paid_social\",\r\n    \"utm_campaign\": \"enterprise_risk_campaign\",\r\n    \"utm_content\": \"executive_report_ad\",\r\n    \"landing_page_url\": \"https://site.com/pricing\",\r\n    \"referrer\": \"linkedin.com\",\r\n    \"last_page_viewed\": \"/team\",\r\n    \"pages_viewed\": 12,\r\n    \"visit_count\": 6,\r\n    \"time_on_site_seconds\": 1200,\r\n    \"pricing_page_viewed\": true,\r\n    \"demo_page_viewed\": true,\r\n    \"signup_page_viewed\": true,\r\n    \"signup_completed_at\": \"2026-05-25T08:45:00Z\",\r\n    \"setup_completed_at\": \"2026-05-26T09:15:00Z\",\r\n    \"product_run_completed_at\": \"2026-05-27T15:30:00Z\",\r\n    \"team_member_added_at\": null,\r\n    \"stuck_stage\": \"team_invite_missing\",\r\n    \"days_stuck\": 14,\r\n    \"engagement_score\": 100,\r\n    \"leakage_score\": 100,\r\n    \"risk_level\": \"high_risk\",\r\n    \"suggested_action\": \"create_salesforce_task_send_team_adoption_email_notify_slack\",\r\n    \"send_to_ai\": true\r\n  }\r\n]"
+            },
+            "metadata": {
+                "designer": {
+                    "x": -1710,
+                    "y": -591,
+                    "name": "Snowflake - Get Leaking Users"
+                },
+                "restore": {
+                    "parameters": {
+                        "type": {
+                            "label": "lead_schema__snowflake"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "type",
+                        "type": "udt",
+                        "label": "Data structure"
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "json",
+                        "type": "text",
+                        "label": "JSON string",
+                        "required": true
+                    }
+                ],
+                "interface": [
+                    {
+                        "help": "",
+                        "name": "email",
+                        "type": "text",
+                        "label": "Email",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "first_name",
+                        "type": "text",
+                        "label": "First name",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "last_name",
+                        "type": "text",
+                        "label": "Last name",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "company_name",
+                        "type": "text",
+                        "label": "Company name",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "industry",
+                        "type": "text",
+                        "label": "Industry",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "company_size",
+                        "type": "number",
+                        "label": "Company size",
+                        "default": null,
+                        "required": false
+                    },
+                    {
+                        "help": "",
+                        "name": "job_title",
+                        "type": "text",
+                        "label": "Job title",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "salesforce_lead_id",
+                        "type": "text",
+                        "label": "Salesforce lead ID",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "owner_id",
+                        "type": "text",
+                        "label": "Owner ID",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "lead_status",
+                        "type": "text",
+                        "label": "Lead status",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "utm_source",
+                        "type": "text",
+                        "label": "Utm source",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "utm_medium",
+                        "type": "text",
+                        "label": "Utm medium",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "utm_campaign",
+                        "type": "text",
+                        "label": "Utm campaign",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "utm_content",
+                        "type": "text",
+                        "label": "Utm content",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "landing_page_url",
+                        "type": "text",
+                        "label": "Landing page URL",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "referrer",
+                        "type": "text",
+                        "label": "Referrer",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "last_page_viewed",
+                        "type": "text",
+                        "label": "Last page viewed",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "pages_viewed",
+                        "type": "number",
+                        "label": "Pages viewed",
+                        "default": null,
+                        "required": false
+                    },
+                    {
+                        "help": "",
+                        "name": "visit_count",
+                        "type": "number",
+                        "label": "Visit count",
+                        "default": null,
+                        "required": false
+                    },
+                    {
+                        "help": "",
+                        "name": "time_on_site_seconds",
+                        "type": "number",
+                        "label": "Time on site seconds",
+                        "default": null,
+                        "required": false
+                    },
+                    {
+                        "help": "",
+                        "name": "pricing_page_viewed",
+                        "type": "boolean",
+                        "label": "Pricing page viewed",
+                        "required": false
+                    },
+                    {
+                        "help": "",
+                        "name": "demo_page_viewed",
+                        "type": "boolean",
+                        "label": "Demo page viewed",
+                        "required": false
+                    },
+                    {
+                        "help": "",
+                        "name": "signup_page_viewed",
+                        "type": "boolean",
+                        "label": "Signup page viewed",
+                        "required": false
+                    },
+                    {
+                        "help": "",
+                        "name": "signup_completed_at",
+                        "type": "text",
+                        "label": "Signup completed at",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "setup_completed_at",
+                        "type": "text",
+                        "label": "Setup completed at",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "product_run_completed_at",
+                        "type": "text",
+                        "label": "Product run completed at",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "team_member_added_at",
+                        "type": "text",
+                        "label": "Team member added at",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "stuck_stage",
+                        "type": "text",
+                        "label": "Stuck stage",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "days_stuck",
+                        "type": "number",
+                        "label": "Days stuck",
+                        "default": null,
+                        "required": false
+                    },
+                    {
+                        "help": "",
+                        "name": "engagement_score",
+                        "type": "number",
+                        "label": "Engagement score",
+                        "default": null,
+                        "required": false
+                    },
+                    {
+                        "help": "",
+                        "name": "leakage_score",
+                        "type": "number",
+                        "label": "Leakage score",
+                        "default": null,
+                        "required": false
+                    },
+                    {
+                        "help": "",
+                        "name": "risk_level",
+                        "type": "text",
+                        "label": "Risk level",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    },
+                    {
+                        "help": "",
+                        "name": "suggested_action",
+                        "type": "text",
+                        "label": "Suggested action",
+                        "default": null,
+                        "required": false,
+                        "multiline": false
+                    }
+                ]
+            }
+        },
+        {
+            "id": 45,
+            "module": "builtin:BasicAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 35
+            },
+            "mapper": {
+                "email": "{{35.email}}",
+                "industry": "{{35.industry}}",
+                "owner_id": "{{35.owner_id}}",
+                "referrer": "{{35.referrer}}",
+                "job_title": "{{35.job_title}}",
+                "last_name": "{{35.last_name}}",
+                "days_stuck": "{{35.days_stuck}}",
+                "first_name": "{{35.first_name}}",
+                "risk_level": "{{35.risk_level}}",
+                "send_to_ai": "{{35.send_to_ai}}",
+                "utm_medium": "{{35.utm_medium}}",
+                "utm_source": "{{35.utm_source}}",
+                "lead_status": "{{35.lead_status}}",
+                "stuck_stage": "{{35.stuck_stage}}",
+                "utm_content": "{{35.utm_content}}",
+                "visit_count": "{{35.visit_count}}",
+                "company_name": "{{35.company_name}}",
+                "company_size": "{{35.company_size}}",
+                "pages_viewed": "{{35.pages_viewed}}",
+                "utm_campaign": "{{35.utm_campaign}}",
+                "leakage_score": "{{35.leakage_score}}",
+                "demo_page_viewed": "{{35.demo_page_viewed}}",
+                "engagement_score": "{{35.engagement_score}}",
+                "landing_page_url": "{{35.landing_page_url}}",
+                "last_page_viewed": "{{35.last_page_viewed}}",
+                "suggested_action": "{{35.suggested_action}}",
+                "salesforce_lead_id": "{{35.salesforce_lead_id}}",
+                "setup_completed_at": "{{35.setup_completed_at}}",
+                "signup_page_viewed": "{{35.signup_page_viewed}}",
+                "pricing_page_viewed": "{{35.pricing_page_viewed}}",
+                "signup_completed_at": "{{35.signup_completed_at}}",
+                "team_member_added_at": "{{35.team_member_added_at}}",
+                "time_on_site_seconds": "{{35.time_on_site_seconds}}",
+                "product_run_completed_at": "{{35.product_run_completed_at}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": -1441,
+                    "y": -888,
+                    "name": "Prepare User Profiles"
+                },
+                "restore": {
+                    "extra": {
+                        "feeder": {
+                            "label": "Snowflake query response - Parse JSON [35]"
+                        },
+                        "target": {
+                            "label": "Custom"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "id": 71,
+            "module": "builtin:BasicFeeder",
+            "version": 1,
+            "parameters": {},
+            "mapper": {
+                "array": "{{45.array}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": -1199,
+                    "y": -575,
+                    "name": "Process Individual User Profile"
+                },
+                "restore": {
+                    "expect": {
+                        "array": {
+                            "mode": "edit"
+                        }
+                    }
+                },
+                "expect": [
+                    {
+                        "mode": "edit",
+                        "name": "array",
+                        "spec": [],
+                        "type": "array",
+                        "label": "Array"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 64,
+            "module": "openai-gpt-3:CreateCompletion",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 2613034
+            },
+            "mapper": {
+                "model": "gpt-4.1-mini",
+                "top_p": "1",
+                "select": "chat",
+                "messages": [
+                    {
+                        "role": "system",
+                        "content": "# GTM Activation AI Prompt — Incredibuild Enriched\r\n\r\nYou are an AI GTM Activation Engine.\r\n\r\nYour purpose is to reduce funnel leakage and increase product-led conversion.\r\n\r\nYou will receive a user profile containing acquisition data, company information, behavioral signals, funnel stage information, engagement metrics, and leakage metrics.\r\n\r\nYour job is to:\r\n\r\n1. Analyze the user profile.\r\n2. Determine the root cause of funnel leakage.\r\n3. Determine the business impact.\r\n4. Determine the best next action(s).\r\n5. Determine the priority level.\r\n6. Generate personalized outreach when needed.\r\n7. Generate Salesforce task content when needed.\r\n8. Generate Slack notification content when needed.\r\n9. Return ONLY valid JSON following the schema below.\r\n\r\nDo not return explanations outside the JSON.\r\n\r\nThe response MUST always contain all fields from the schema.\r\nNever remove fields.\r\nIf a field is not applicable, return:\r\n\r\n* empty string `\"\"`\r\n* `false`\r\n* empty array `[]`\r\n\r\ndepending on the field type.\r\n\r\nIMPORTANT:\r\nIf `email.required` is true, then `email.subject` and `email.body` MUST NOT be empty.\r\nIf `email.required` is true, generate a complete professional modern HTML email body.\r\nThe email body must be valid HTML.\r\nThe email body should be suitable to send directly from HubSpot, Salesforce, Gmail, or another email tool.\r\nDo not use markdown in the email body.\r\nDo not include explanations outside the JSON.\r\n\r\n---\r\n\r\n# BUSINESS CONTEXT\r\n\r\nThe funnel is:\r\n\r\nLead\r\n→ Signup\r\n→ Setup Complete\r\n→ Product Run\r\n→ Team Invite\r\n\r\nThe objective is to move users to the next funnel stage.\r\n\r\n---\r\n\r\n# INCREDIBUILD COMPANY AND PRODUCT CONTEXT\r\n\r\nUse the following Incredibuild knowledge ONLY to improve personalization, business relevance, email quality, Salesforce task quality, HubSpot sequence naming, and Slack message quality.\r\n\r\nDo NOT change the decision rules.\r\nDo NOT change the priority rules.\r\nDo NOT change the required output schema.\r\nDo NOT add fields to the JSON schema.\r\nDo NOT remove fields from the JSON schema.\r\nDo NOT override the user's actual input data.\r\nDo NOT mention every product in every message.\r\nUse the most relevant product/value point based on the user's industry, role, funnel stage, and behavior.\r\n\r\n## Company Positioning\r\n\r\nIncredibuild is a development acceleration platform for software teams.\r\n\r\nThe core value proposition is helping engineering organizations:\r\n\r\n- Build faster.\r\n- Reduce waiting time in development and CI/CD pipelines.\r\n- Increase developer productivity.\r\n- Improve engineering throughput.\r\n- Reduce redundant build work.\r\n- Use existing compute resources more efficiently.\r\n- Gain better visibility into build and pipeline bottlenecks.\r\n- Support faster and more reliable software delivery.\r\n\r\nUse language around:\r\n\r\n- Faster builds.\r\n- Faster CI/CD cycles.\r\n- Less waiting for compilation.\r\n- Higher developer productivity.\r\n- Better engineering velocity.\r\n- Shorter feedback loops.\r\n- Faster iteration.\r\n- Better use of existing machines, idle CPUs, and cloud resources.\r\n- Less wasted compute.\r\n- Better visibility into bottlenecks.\r\n- More predictable delivery.\r\n\r\nAvoid sounding too generic.\r\nWhen relevant, connect the outreach to engineering, DevOps, platform engineering, build engineering, release engineering, CI/CD, and developer productivity outcomes.\r\n\r\n## Core Product Capabilities\r\n\r\nUse these product capabilities as context when generating messages.\r\n\r\n### Build Cache\r\n\r\nIncredibuild helps reduce redundant build execution by reusing shared cache results across the organization.\r\n\r\nUse this when the user appears interested in:\r\n\r\n- CI/CD acceleration.\r\n- Reducing repeated compilation.\r\n- Developer productivity.\r\n- Build system optimization.\r\n- Lowering wasted compute.\r\n- Speeding up pull request validation.\r\n\r\nMessaging examples:\r\n\r\n- Reuse build outputs instead of repeating the same work.\r\n- Reduce redundant compilation across teams and branches.\r\n- Help developers get feedback faster.\r\n- Improve CI throughput without forcing a major migration.\r\n\r\n### Distributed Processing\r\n\r\nIncredibuild can distribute tasks across available CPUs on network or cloud machines.\r\n\r\nUse this when the user appears interested in:\r\n\r\n- Heavy C++ builds.\r\n- Large codebases.\r\n- Game development.\r\n- Embedded software.\r\n- Automotive builds.\r\n- Simulation workloads.\r\n- Long-running builds.\r\n- Parallelizable tasks.\r\n- Scaling compute without changing the development workflow.\r\n\r\nMessaging examples:\r\n\r\n- Use idle compute across the network or cloud.\r\n- Turn available machines into a high-throughput execution grid.\r\n- Accelerate heavy workloads while keeping the developer experience familiar.\r\n- Run builds from existing tools while Incredibuild handles acceleration behind the scenes.\r\n\r\n### Observability\r\n\r\nIncredibuild provides visibility into build-time and pipeline inefficiencies.\r\n\r\nUse this when the user appears interested in:\r\n\r\n- Understanding bottlenecks.\r\n- CI performance.\r\n- Build analytics.\r\n- Engineering efficiency.\r\n- Platform team ownership.\r\n- Improving delivery predictability.\r\n\r\nMessaging examples:\r\n\r\n- Identify where build and CI time is being lost.\r\n- Give platform and DevOps teams clearer visibility into bottlenecks.\r\n- Move from guessing about slow pipelines to acting on measurable signals.\r\n\r\n### Build Runner\r\n\r\nIncredibuild can help reduce CI runner queues and infrastructure overhead.\r\n\r\nUse this when the user appears interested in:\r\n\r\n- GitHub Actions.\r\n- CI queues.\r\n- Runner availability.\r\n- DevOps infrastructure.\r\n- Developer wait time.\r\n- Scaling CI execution.\r\n\r\nMessaging examples:\r\n\r\n- Reduce queue time in CI.\r\n- Help teams move faster without constantly maintaining more runner infrastructure.\r\n- Improve developer experience by shortening wait times between commit and feedback.\r\n\r\n### Build Guard / SBOM\r\n\r\nIncredibuild can support software supply chain visibility and SBOM generation.\r\n\r\nUse this when the user appears interested in:\r\n\r\n- Security.\r\n- Compliance.\r\n- Audit readiness.\r\n- Software supply chain risk.\r\n- Regulated industries.\r\n- Enterprise governance.\r\n\r\nMessaging examples:\r\n\r\n- Improve software supply chain visibility.\r\n- Support audit-ready development workflows.\r\n- Give security and engineering teams better confidence in what was built.\r\n\r\n### Coding Agent Sandbox / AI-Native Development\r\n\r\nIncredibuild also has AI-native development context around giving coding agents an execution layer and build context.\r\n\r\nUse this carefully when the user profile shows interest in:\r\n\r\n- AI development.\r\n- AI coding agents.\r\n- Developer automation.\r\n- AI-assisted engineering.\r\n- Platform engineering for AI workflows.\r\n\r\nMessaging examples:\r\n\r\n- Help AI-assisted development workflows move from code generation to reliable execution.\r\n- Give agents and developers faster feedback from real build context.\r\n- Reduce the gap between AI-generated code and validated software delivery.\r\n\r\n### Software Compatibility Layer\r\n\r\nIncredibuild can help reduce Windows compute costs in relevant environments.\r\n\r\nUse this only when the input suggests:\r\n\r\n- Windows compute.\r\n- Windows-based build environments.\r\n- Cost optimization.\r\n- Compatibility concerns.\r\n\r\n## Existing Stack Compatibility\r\n\r\nWhen relevant, mention that Incredibuild is designed to work with existing developer and CI/CD tools.\r\n\r\nRelevant examples include:\r\n\r\n- Visual Studio\r\n- Command line builds\r\n- Existing CI tools\r\n- GitHub\r\n- GitLab\r\n- Jenkins\r\n- Azure DevOps\r\n- TeamCity\r\n- Atlassian Bamboo\r\n- Docker\r\n- Kubernetes\r\n- CMake\r\n- MSVC / Visual C++\r\n- GCC / g++\r\n- Clang / LLVM\r\n- Ninja\r\n- Make\r\n- Unreal Engine\r\n- CryEngine\r\n- Open 3D Engine\r\n- Yocto\r\n- AOSP\r\n- Automotive Grade Linux\r\n- Linux Kernel\r\n- Chromium\r\n\r\nUse this to reduce friction in outreach.\r\n\r\nMessaging examples:\r\n\r\n- You do not need to start by replacing your existing toolchain.\r\n- The next step can be validating acceleration with the tools your team already uses.\r\n- The value is strongest when the user can connect Incredibuild to an existing build or CI workflow quickly.\r\n\r\n## Relevant Personas\r\n\r\nUse the user's job title when available to tune the message.\r\n\r\n### CTO / VP Engineering / Engineering Leader\r\n\r\nFocus on:\r\n\r\n- Engineering velocity.\r\n- Developer productivity.\r\n- Release speed.\r\n- Time-to-market.\r\n- Reducing wasted engineering time.\r\n- Scaling development without adding unnecessary infrastructure cost.\r\n- Visibility and control over development processes.\r\n\r\n### DevOps / Platform Engineering\r\n\r\nFocus on:\r\n\r\n- CI/CD throughput.\r\n- Runner queues.\r\n- Pipeline bottlenecks.\r\n- Build observability.\r\n- Infrastructure efficiency.\r\n- Scaling build capacity.\r\n- Reliability of developer workflows.\r\n\r\n### Build Engineer / Release Engineer\r\n\r\nFocus on:\r\n\r\n- Build acceleration.\r\n- Distributed builds.\r\n- Cache reuse.\r\n- Build logs and results.\r\n- Compilation performance.\r\n- Less manual tuning.\r\n- Faster validation loops.\r\n\r\n### Security / Compliance / Governance\r\n\r\nFocus on:\r\n\r\n- SBOM generation.\r\n- Audit readiness.\r\n- Software supply chain visibility.\r\n- Compliance-friendly engineering workflows.\r\n- Reducing unknowns in the build process.\r\n\r\n### Developer / Technical Lead\r\n\r\nFocus on:\r\n\r\n- Less waiting.\r\n- Faster feedback.\r\n- More time coding.\r\n- Shorter compile cycles.\r\n- Faster local and CI validation.\r\n\r\n## Incredibuild-Specific Funnel Stage Messaging\r\n\r\nUse these as messaging context only. Do not change the decision logic.\r\n\r\n### lead_not_signed_up\r\n\r\nThe user has shown interest but has not started.\r\n\r\nMessage angle:\r\n\r\n- Encourage them to see how Incredibuild can reduce build and CI wait time.\r\n- Invite them to book a demo or start a quick evaluation.\r\n- Emphasize low-friction validation with their existing stack.\r\n\r\nCTA examples:\r\n\r\n- Book a build acceleration demo.\r\n- Start your Incredibuild evaluation.\r\n- See how faster builds could work for your team.\r\n\r\n### setup_not_completed\r\n\r\nThe user signed up but did not complete setup.\r\n\r\nMessage angle:\r\n\r\n- Encourage them to complete the initial setup.\r\n- Mention connecting the lightweight agent or first build environment when appropriate.\r\n- Emphasize that the fastest way to see value is to connect an existing build or CI workflow.\r\n\r\nCTA examples:\r\n\r\n- Complete your setup.\r\n- Connect your first build.\r\n- Continue setup.\r\n\r\n### product_run_not_completed\r\n\r\nThe user completed setup but has not completed a meaningful first product run.\r\n\r\nMessage angle:\r\n\r\n- Encourage them to run their first accelerated build or CI workflow.\r\n- Emphasize that the first run helps reveal build acceleration potential and bottlenecks.\r\n- Mention that this is the moment where teams start seeing practical value.\r\n\r\nCTA examples:\r\n\r\n- Run your first accelerated build.\r\n- Start your first build run.\r\n- Continue activation.\r\n\r\n### team_invite_missing\r\n\r\nThe user completed a product run but has not invited teammates.\r\n\r\nMessage angle:\r\n\r\n- Encourage inviting DevOps, platform, build, release, or engineering teammates.\r\n- Emphasize that build acceleration and shared cache value grow when more relevant team members are involved.\r\n- Mention collaboration around bottlenecks, cache usage, CI throughput, and rollout decisions.\r\n\r\nCTA examples:\r\n\r\n- Invite your build team.\r\n- Invite teammates.\r\n- Bring your engineering team in.\r\n\r\n## Industry Personalization for Incredibuild\r\n\r\nUse these examples to make the outreach feel connected to the buyer's world.\r\n\r\n### Gaming and Simulation\r\n\r\nReference:\r\n\r\n- Faster C++ compilation.\r\n- Shader build acceleration.\r\n- Faster iteration for game teams.\r\n- Large engine builds.\r\n- Less waiting between code changes and playable/testable builds.\r\n- Faster creative and technical feedback loops.\r\n\r\n### Automotive / Embedded\r\n\r\nReference:\r\n\r\n- Yocto, AGL, QNX, AOSP, or embedded Linux workflows when relevant.\r\n- Long build cycles.\r\n- Parallel validation.\r\n- Safer and faster release cadence.\r\n- Earlier defect detection.\r\n- Complex embedded software delivery.\r\n\r\n### Semiconductors\r\n\r\nReference:\r\n\r\n- Complex engineering workflows.\r\n- Build and validation throughput.\r\n- Simulation or toolchain-heavy development.\r\n- Improving feedback loops across large technical teams.\r\n\r\n### Financial Services\r\n\r\nReference:\r\n\r\n- Secure software delivery.\r\n- Governance.\r\n- Engineering productivity.\r\n- Reducing CI/CD delays.\r\n- Faster delivery of customer-facing and internal platforms.\r\n- Reliability and operational control.\r\n\r\n### Healthcare / MedTech\r\n\r\nReference:\r\n\r\n- Regulated software delivery.\r\n- Compliance-sensitive engineering workflows.\r\n- Faster validation while maintaining control.\r\n- Operational visibility.\r\n- Reliable release processes.\r\n\r\n### SaaS / DevTools / Software Companies\r\n\r\nReference:\r\n\r\n- Developer productivity.\r\n- CI/CD acceleration.\r\n- Platform engineering.\r\n- Pull request validation speed.\r\n- Faster feature delivery.\r\n- Less developer idle time.\r\n\r\n### E-commerce\r\n\r\nReference:\r\n\r\n- Faster release cycles.\r\n- Conversion-impacting product changes.\r\n- CI/CD throughput.\r\n- Reducing delays between engineering work and customer-facing improvements.\r\n\r\n## Product-Aware Writing Rules\r\n\r\nWhen generating emails, Salesforce tasks, HubSpot sequence names, or Slack messages:\r\n\r\n- Prefer Incredibuild-specific language over generic SaaS language.\r\n- Mention build acceleration, CI/CD speed, developer productivity, or engineering throughput when relevant.\r\n- Mention cache, distributed processing, observability, CI runner queues, or SBOM only when contextually relevant.\r\n- Do not overload the message with too many product names.\r\n- Do not invent performance numbers.\r\n- Do not promise a specific percentage improvement unless that exact number appears in the user input.\r\n- Do not claim the user already uses a tool unless the input says so.\r\n- Do not mention competitors.\r\n- Keep the tone consultative, technical, and business-friendly.\r\n- The message should feel like it came from a GTM team that understands engineering and DevOps buyers.\r\n\r\n## Preferred Business Impact Language\r\n\r\nUse these types of business impact phrases when relevant:\r\n\r\n- Delayed setup may prevent the team from validating build acceleration value.\r\n- Missing the first product run delays proof of value.\r\n- Not inviting teammates may slow rollout across DevOps, platform, and engineering stakeholders.\r\n- Long build or CI wait times can reduce engineering throughput.\r\n- Slow feedback loops can delay releases and reduce developer productivity.\r\n- Lack of visibility can make it harder to prioritize build and CI bottlenecks.\r\n- Enterprise accounts may need human guidance to align engineering, DevOps, and leadership stakeholders.\r\n\r\n---\r\n\r\n# LEAKAGE STAGES\r\n\r\nPossible stuck_stage values:\r\n\r\nlead_not_signed_up\r\n\r\nsetup_not_completed\r\n\r\nproduct_run_not_completed\r\n\r\nteam_invite_missing\r\n\r\nhealthy\r\n\r\n---\r\n\r\n# PRIORITY RULES\r\n\r\nSet priority according to business value.\r\n\r\nCritical\r\n\r\nUse when:\r\n\r\nCompany size > 1000\r\n\r\nAND leakage_score >= 80\r\n\r\nOR\r\n\r\nengagement_score >= 80\r\n\r\nAND leakage_score >= 80\r\n\r\nHigh\r\n\r\nUse when:\r\n\r\nleakage_score >= 70\r\n\r\nMedium\r\n\r\nUse when:\r\n\r\nleakage_score between 40 and 69\r\n\r\nLow\r\n\r\nUse when:\r\n\r\nleakage_score below 40\r\n\r\n---\r\n\r\n# DECISION RULES\r\n\r\n## Case 1\r\n\r\nIf:\r\n\r\nstuck_stage = lead_not_signed_up\r\n\r\nAND\r\n\r\nengagement_score >= 70\r\n\r\nThen:\r\n\r\nrecommended_actions:\r\n\r\nsend_signup_conversion_email\r\n\r\nnotify_slack\r\n\r\nReason:\r\n\r\nHigh buying intent detected but signup not completed.\r\n\r\n---\r\n\r\n## Case 2\r\n\r\nIf:\r\n\r\nstuck_stage = lead_not_signed_up\r\n\r\nAND\r\n\r\ncompany_size >= 1000\r\n\r\nThen:\r\n\r\nrecommended_actions:\r\n\r\ncreate_salesforce_task\r\n\r\nnotify_slack\r\n\r\nReason:\r\n\r\nHigh-value account should receive human outreach.\r\n\r\n---\r\n\r\n## Case 3\r\n\r\nIf:\r\n\r\nstuck_stage = setup_not_completed\r\n\r\nThen:\r\n\r\nrecommended_actions:\r\n\r\nsend_setup_recovery_email\r\n\r\nReason:\r\n\r\nUser signed up but failed to activate.\r\n\r\n---\r\n\r\n## Case 4\r\n\r\nIf:\r\n\r\nstuck_stage = product_run_not_completed\r\n\r\nThen:\r\n\r\nrecommended_actions:\r\n\r\nsend_product_activation_email\r\n\r\nReason:\r\n\r\nUser completed setup but has not experienced product value.\r\n\r\n---\r\n\r\n## Case 5\r\n\r\nIf:\r\n\r\nstuck_stage = team_invite_missing\r\n\r\nAND\r\n\r\ncompany_size < 1000\r\n\r\nThen:\r\n\r\nrecommended_actions:\r\n\r\nsend_team_adoption_email\r\n\r\nadd_hubspot_sequence\r\n\r\nReason:\r\n\r\nUser achieved product value but adoption stalled.\r\n\r\n---\r\n\r\n## Case 6\r\n\r\nIf:\r\n\r\nstuck_stage = team_invite_missing\r\n\r\nAND\r\n\r\ncompany_size >= 1000\r\n\r\nThen:\r\n\r\nrecommended_actions:\r\n\r\ncreate_salesforce_task\r\n\r\nsend_team_adoption_email\r\n\r\nnotify_slack\r\n\r\nReason:\r\n\r\nEnterprise account showing adoption friction.\r\n\r\n---\r\n\r\n## Case 7\r\n\r\nIf:\r\n\r\ndays_stuck >= 14\r\n\r\nThen:\r\n\r\nadd:\r\n\r\nnotify_slack\r\n\r\nReason:\r\n\r\nLong-term funnel blockage.\r\n\r\n---\r\n\r\n# INDUSTRY PERSONALIZATION\r\n\r\nUse industry context when generating outreach.\r\n\r\nExamples:\r\n\r\nFintech\r\n\r\nReference risk management, growth, analytics, operational efficiency.\r\n\r\nHealthcare\r\n\r\nReference compliance, patient workflows, operational visibility.\r\n\r\nE-commerce\r\n\r\nReference revenue growth, conversion optimization, team collaboration.\r\n\r\nSaaS\r\n\r\nReference adoption, productivity, workflow efficiency.\r\n\r\n---\r\n\r\n# EMAIL GENERATION RULES\r\n\r\nEmail must:\r\n\r\nBe professional.\r\nBe personalized.\r\nBe relevant to the user’s stuck stage.\r\nReference the user's industry.\r\nReference the user's company name.\r\nReference the current funnel stage.\r\nReference the reason for outreach.\r\nInclude exactly one CTA.\r\nDo not sound robotic.\r\nDo not mention leakage scores.\r\nDo not mention internal scoring logic.\r\nDo not mention that AI generated the email.\r\n\r\nThe email body must be returned as a polished modern HTML email.\r\n\r\nHTML quality requirements:\r\n\r\nUse a full email-style HTML structure inside the body field.\r\nUse a professional card/container layout.\r\nUse inline styles only.\r\nUse email-safe HTML.\r\nUse a clean modern visual style.\r\nUse a soft background color.\r\nUse a white content card.\r\nUse a clear headline.\r\nUse a short personalized greeting.\r\nUse 2-3 concise paragraphs.\r\nUse a small “Why this matters” section with 2-3 short bullet-style rows.\r\nUse exactly one CTA button.\r\nUse a polite closing.\r\nUse a subtle footer.\r\nDo not include `<script>`.\r\nDo not include external CSS.\r\nDo not include markdown.\r\nDo not include placeholder text like \"...\".\r\nDo not leave the body empty if email.required is true.\r\n\r\nCTA rules:\r\n\r\nFor lead_not_signed_up:\r\nCTA text should encourage signup or booking a demo.\r\n\r\nFor setup_not_completed:\r\nCTA text should encourage completing setup.\r\n\r\nFor product_run_not_completed:\r\nCTA text should encourage running the product or continuing activation.\r\n\r\nFor team_invite_missing:\r\nCTA text should encourage inviting teammates.\r\n\r\nUse this CTA URL if no URL exists in the input:\r\nhttps://example.com\r\n\r\nThe HTML should look similar in quality and structure to this style:\r\n\r\n<div style=\"margin:0; padding:0; background:#f6f8fb; font-family:Arial, sans-serif; color:#1f2937;\">\r\n  <div style=\"max-width:640px; margin:0 auto; padding:32px 16px;\">\r\n    <div style=\"background:#ffffff; border-radius:16px; padding:32px; border:1px solid #e5e7eb;\">\r\n      <p style=\"font-size:13px; color:#6b7280; margin:0 0 12px;\">Product activation update</p>\r\n      <h1 style=\"font-size:24px; line-height:1.3; margin:0 0 16px; color:#111827;\">A simple next step to keep momentum going</h1>\r\n      <p style=\"font-size:15px; line-height:1.6; margin:0 0 16px;\">Hi Sarah,</p>\r\n      <p style=\"font-size:15px; line-height:1.6; margin:0 0 16px;\">...</p>\r\n      <div style=\"background:#f9fafb; border:1px solid #e5e7eb; border-radius:12px; padding:16px; margin:22px 0;\">\r\n        <p style=\"font-size:14px; font-weight:bold; margin:0 0 10px; color:#111827;\">Why this matters</p>\r\n        <p style=\"font-size:14px; margin:0 0 8px;\">• ...</p>\r\n        <p style=\"font-size:14px; margin:0;\">• ...</p>\r\n      </div>\r\n      <a href=\"https://example.com\" style=\"display:inline-block; padding:13px 20px; background:#111827; color:#ffffff; text-decoration:none; border-radius:8px; font-size:15px; font-weight:bold;\">Continue</a>\r\n      <p style=\"font-size:15px; line-height:1.6; margin:24px 0 0;\">Best,<br>The GTM Team</p>\r\n    </div>\r\n    <p style=\"font-size:12px; color:#9ca3af; text-align:center; margin:16px 0 0;\">You received this message because your account showed product activation activity.</p>\r\n  </div>\r\n</div>\r\n\r\n---\r\n\r\n# SALESFORCE TASK RULES\r\n\r\nTask should include:\r\n\r\nProblem detected.\r\n\r\nBusiness context.\r\n\r\nSuggested conversation angle.\r\n\r\nClear next step.\r\n\r\nIf `salesforce_task.required` is true, then `salesforce_task.subject` and `salesforce_task.description` MUST NOT be empty.\r\n\r\n---\r\n\r\n# SLACK ALERT RULES\r\n\r\nSlack alert should contain:\r\n\r\nCompany\r\n\r\nIndustry\r\n\r\nCompany size\r\n\r\nStuck stage\r\n\r\nLeakage score\r\n\r\nPriority\r\n\r\nReason\r\n\r\nRecommended action\r\n\r\nMaximum 120 words.\r\n\r\nIf `slack.required` is true, then `slack.message` MUST NOT be empty.\r\n\r\nIf `slack.required` is true, generate a professional, modern Slack message with clear formatting.\r\n\r\nSlack message rules:\r\n\r\nUse Slack-friendly formatting.\r\nUse emojis sparingly for visual clarity.\r\nUse bold labels using Slack syntax, for example: *Company:*\r\nUse short sections.\r\nInclude a clear title line.\r\nInclude priority, company, industry, company size, stuck stage, leakage score, reason, and recommended action.\r\nInclude a clear next step for the GTM/sales team.\r\nDo not make the Slack message longer than 120 words.\r\nDo not use HTML in the Slack message.\r\nDo not use markdown tables.\r\nDo not include placeholder text like \"...\".\r\n\r\nExample Slack message style:\r\n\r\n🚨 *High-Risk GTM Account Detected*\r\n\r\n*Company:* FinTechCo  \r\n*Industry:* Fintech  \r\n*Company Size:* 350  \r\n*Stuck Stage:* Team Invite Missing  \r\n*Leakage Score:* 85  \r\n*Priority:* High  \r\n\r\n*Reason:* User completed a successful product run but has not invited teammates, which may block team adoption.\r\n\r\n*Recommended Action:* Send team adoption email and add the contact to the Team Adoption Sequence.\r\n\r\n*Next Step:* Owner should review the account and follow up within 24 hours.\r\n\r\n---\r\n\r\n# REQUIRED OUTPUT SCHEMA\r\n\r\nReturn ONLY JSON.\r\n\r\n{\r\n  \"decision\": {\r\n    \"risk_level\": \"\",\r\n    \"priority\": \"\",\r\n    \"stuck_stage\": \"\",\r\n    \"root_cause\": \"\",\r\n    \"business_impact\": \"\"\r\n  },\r\n\r\n  \"recommended_actions\": [],\r\n\r\n  \"reasoning\": {\r\n    \"summary\": \"\",\r\n    \"confidence\": 0\r\n  },\r\n\r\n  \"email\": {\r\n    \"required\": false,\r\n    \"email_type\": \"\",\r\n    \"subject\": \"\",\r\n    \"body\": \"\"\r\n  },\r\n\r\n  \"salesforce_task\": {\r\n    \"required\": false,\r\n    \"priority\": \"\",\r\n    \"subject\": \"\",\r\n    \"description\": \"\"\r\n  },\r\n\r\n  \"hubspot\": {\r\n    \"required\": false,\r\n    \"sequence_name\": \"\"\r\n  },\r\n\r\n  \"slack\": {\r\n    \"required\": false,\r\n    \"message\": \"\"\r\n  }\r\n}\r\n\r\n---\r\n\r\n# EXAMPLE INPUT\r\n\r\n{\r\n  \"first_name\": \"Sarah\",\r\n  \"company_name\": \"FinTechCo\",\r\n  \"industry\": \"Fintech\",\r\n  \"company_size\": 350,\r\n\r\n  \"engagement_score\": 92,\r\n  \"leakage_score\": 88,\r\n\r\n  \"days_stuck\": 5,\r\n\r\n  \"stuck_stage\": \"team_invite_missing\",\r\n\r\n  \"utm_source\": \"facebook\",\r\n  \"utm_campaign\": \"credit_demo_campaign\",\r\n\r\n  \"pricing_page_viewed\": true,\r\n  \"demo_page_viewed\": true,\r\n\r\n  \"pages_viewed\": 8,\r\n  \"visit_count\": 4\r\n}\r\n\r\nExpected outcome:\r\n\r\n{\r\n  \"decision\": {\r\n    \"risk_level\": \"high\",\r\n    \"priority\": \"high\",\r\n    \"stuck_stage\": \"team_invite_missing\",\r\n    \"root_cause\": \"User achieved product value but failed to adopt collaboratively.\",\r\n    \"business_impact\": \"Risk of churn before account expansion.\"\r\n  },\r\n\r\n  \"recommended_actions\": [\r\n    \"send_team_adoption_email\",\r\n    \"add_hubspot_sequence\"\r\n  ],\r\n\r\n  \"reasoning\": {\r\n    \"summary\": \"Strong engagement detected. User has already experienced value but adoption stalled.\",\r\n    \"confidence\": 95\r\n  },\r\n\r\n  \"email\": {\r\n    \"required\": true,\r\n    \"email_type\": \"team_adoption\",\r\n    \"subject\": \"Get more value from FinTechCo's first successful run\",\r\n    \"body\": \"<div style=\\\"margin:0; padding:0; background:#f6f8fb; font-family:Arial, sans-serif; color:#1f2937;\\\"><div style=\\\"max-width:640px; margin:0 auto; padding:32px 16px;\\\"><div style=\\\"background:#ffffff; border-radius:16px; padding:32px; border:1px solid #e5e7eb;\\\"><p style=\\\"font-size:13px; color:#6b7280; margin:0 0 12px;\\\">Team adoption opportunity</p><h1 style=\\\"font-size:24px; line-height:1.3; margin:0 0 16px; color:#111827;\\\">Bring your team into the next step</h1><p style=\\\"font-size:15px; line-height:1.6; margin:0 0 16px;\\\">Hi Sarah,</p><p style=\\\"font-size:15px; line-height:1.6; margin:0 0 16px;\\\">FinTechCo has already completed a successful first product run, which is a strong signal that your team is close to seeing real value from the platform.</p><p style=\\\"font-size:15px; line-height:1.6; margin:0 0 16px;\\\">For fintech teams focused on analytics, risk visibility, and operational efficiency, the next best step is usually inviting teammates so the right people can review results together and move faster from insight to action.</p><div style=\\\"background:#f9fafb; border:1px solid #e5e7eb; border-radius:12px; padding:16px; margin:22px 0;\\\"><p style=\\\"font-size:14px; font-weight:bold; margin:0 0 10px; color:#111827;\\\">Why this matters</p><p style=\\\"font-size:14px; margin:0 0 8px;\\\">• Your first product run is already complete.</p><p style=\\\"font-size:14px; margin:0 0 8px;\\\">• Inviting teammates helps turn results into shared decisions.</p><p style=\\\"font-size:14px; margin:0;\\\">• Team adoption can help FinTechCo move faster from evaluation to impact.</p></div><a href=\\\"https://example.com\\\" style=\\\"display:inline-block; padding:13px 20px; background:#111827; color:#ffffff; text-decoration:none; border-radius:8px; font-size:15px; font-weight:bold;\\\">Invite your team</a><p style=\\\"font-size:15px; line-height:1.6; margin:24px 0 0;\\\">Best,<br>The GTM Team</p></div><p style=\\\"font-size:12px; color:#9ca3af; text-align:center; margin:16px 0 0;\\\">You received this message because your account showed product activation activity.</p></div></div>\"\r\n  },\r\n\r\n  \"salesforce_task\": {\r\n    \"required\": false,\r\n    \"priority\": \"\",\r\n    \"subject\": \"\",\r\n    \"description\": \"\"\r\n  },\r\n\r\n  \"hubspot\": {\r\n    \"required\": true,\r\n    \"sequence_name\": \"Team Adoption Sequence\"\r\n  },\r\n\r\n  \"slack\": {\r\n    \"required\": false,\r\n    \"message\": \"\"\r\n  }\r\n}\r\n\r\n---\r\n\r\n# USER PROFILE INPUT\r\n\r\nAnalyze the following real Snowflake user profile.\r\n\r\nReturn ONLY the final JSON schema.\r\n\r\n{{`71`}}"
+                    }
+                ],
+                "max_tokens": "2048",
+                "temperature": "0.2",
+                "n_completions": "1",
+                "response_format": "text"
+            },
+            "metadata": {
+                "designer": {
+                    "x": -846,
+                    "y": -572,
+                    "name": "AI GTM Decision Engine"
+                },
+                "restore": {
+                    "expect": {
+                        "stop": {
+                            "mode": "chose"
+                        },
+                        "model": {
+                            "mode": "chose",
+                            "label": "gpt-4.1-mini (system)Smaller, faster version of GPT-4.1"
+                        },
+                        "select": {
+                            "label": "Create a Chat Completion (GPT and o1 models)"
+                        },
+                        "messages": {
+                            "mode": "chose",
+                            "items": [
+                                {
+                                    "role": {
+                                        "mode": "chose",
+                                        "label": "Developer / System"
+                                    }
+                                }
+                            ]
+                        },
+                        "logit_bias": {
+                            "mode": "chose"
+                        },
+                        "tool_choice": {
+                            "mode": "chose",
+                            "label": "Empty"
+                        },
+                        "response_format": {
+                            "mode": "chose",
+                            "label": "Text"
+                        },
+                        "additionalParameters": {
+                            "mode": "chose"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "openai-gpt-3"
+                            },
+                            "label": "My OpenAI connection"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:openai-gpt-3",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "select",
+                        "type": "select",
+                        "label": "Select Method",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "chat",
+                                "prompt"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "temperature",
+                        "type": "number",
+                        "label": "Temperature",
+                        "validate": {
+                            "max": 2,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "top_p",
+                        "type": "number",
+                        "label": "Top P",
+                        "validate": {
+                            "max": 1,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "n_completions",
+                        "type": "number",
+                        "label": "Number"
+                    },
+                    {
+                        "name": "frequency_penalty",
+                        "type": "number",
+                        "label": "Frequency Penalty",
+                        "validate": {
+                            "max": 2,
+                            "min": -2
+                        }
+                    },
+                    {
+                        "name": "presence_penalty",
+                        "type": "number",
+                        "label": "Presence Penalty",
+                        "validate": {
+                            "max": 2,
+                            "min": -2
+                        }
+                    },
+                    {
+                        "name": "logit_bias",
+                        "spec": {
+                            "name": "value",
+                            "spec": [
+                                {
+                                    "name": "token",
+                                    "type": "text",
+                                    "label": "Token ID",
+                                    "required": true
+                                },
+                                {
+                                    "name": "probability",
+                                    "type": "number",
+                                    "label": "Probability",
+                                    "required": true,
+                                    "validate": {
+                                        "max": 100,
+                                        "min": -100
+                                    }
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Token Probability"
+                        },
+                        "type": "array",
+                        "label": "Token Probability"
+                    },
+                    {
+                        "name": "seed",
+                        "type": "integer",
+                        "label": "Seed"
+                    },
+                    {
+                        "name": "tool_choice",
+                        "type": "select",
+                        "label": "Tool Choice",
+                        "validate": {
+                            "enum": [
+                                "none",
+                                "auto",
+                                "required"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "stop",
+                        "spec": {
+                            "name": "value",
+                            "type": "text",
+                            "label": "Stop Sequence"
+                        },
+                        "type": "array",
+                        "label": "Stop Sequences",
+                        "validate": {
+                            "maxItems": 4
+                        }
+                    },
+                    {
+                        "name": "additionalParameters",
+                        "spec": {
+                            "name": "value",
+                            "spec": [
+                                {
+                                    "name": "key",
+                                    "type": "text",
+                                    "label": "Parameter Name",
+                                    "required": true
+                                },
+                                {
+                                    "name": "type",
+                                    "type": "select",
+                                    "label": "Input Type",
+                                    "options": [
+                                        {
+                                            "label": "Text",
+                                            "value": "text",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "text",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ],
+                                            "default": true
+                                        },
+                                        {
+                                            "label": "Number",
+                                            "value": "number",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "number",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Boolean",
+                                            "value": "boolean",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "boolean",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Date",
+                                            "value": "date",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "date",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Any",
+                                            "value": "any",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "any",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Input Parameter"
+                        },
+                        "type": "array",
+                        "label": "Other Input Parameters"
+                    },
+                    {
+                        "name": "model",
+                        "type": "select",
+                        "label": "Model",
+                        "required": true
+                    },
+                    {
+                        "name": "max_tokens",
+                        "type": "uinteger",
+                        "label": "Max Output Tokens"
+                    },
+                    {
+                        "name": "messages",
+                        "spec": {
+                            "name": "value",
+                            "spec": [
+                                {
+                                    "name": "role",
+                                    "type": "select",
+                                    "label": "Role",
+                                    "options": {
+                                        "store": [
+                                            {
+                                                "label": "User",
+                                                "value": "user",
+                                                "nested": [
+                                                    {
+                                                        "help": "Text content of the message on behalf of the selected __Role__.",
+                                                        "name": "content",
+                                                        "type": "text",
+                                                        "label": "Text Content"
+                                                    },
+                                                    {
+                                                        "name": "imageInputType",
+                                                        "type": "select",
+                                                        "label": "Image Input Type",
+                                                        "options": [
+                                                            {
+                                                                "label": "URL",
+                                                                "value": "url",
+                                                                "nested": [
+                                                                    {
+                                                                        "help": "Make sure to use a publicly accessible URL.\nYou can test if your image is publicly accessible by opening the link in an incognito tab.",
+                                                                        "name": "imageUrl",
+                                                                        "type": "url",
+                                                                        "label": "Image URL"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "label": "Image File",
+                                                                "value": "file",
+                                                                "nested": [
+                                                                    {
+                                                                        "name": "imageFile",
+                                                                        "spec": [
+                                                                            {
+                                                                                "help": "Accepted extensions: `.jpg`, `.jpeg`, `.png`, `.webp` and `.gif`.",
+                                                                                "name": "imageFilename",
+                                                                                "type": "filename",
+                                                                                "label": "Image Filename",
+                                                                                "semantic": "file:name",
+                                                                                "extension": [
+                                                                                    "jpg",
+                                                                                    "jpeg",
+                                                                                    "png",
+                                                                                    "webp",
+                                                                                    "gif"
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "name": "imageData",
+                                                                                "type": "buffer",
+                                                                                "label": "Image Data",
+                                                                                "semantic": "file:data"
+                                                                            }
+                                                                        ],
+                                                                        "type": "collection",
+                                                                        "label": "Image"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "mappable": false
+                                                    },
+                                                    {
+                                                        "help": "Recommended value: `Auto`",
+                                                        "name": "imageDetail",
+                                                        "type": "select",
+                                                        "label": "Image Detail",
+                                                        "options": [
+                                                            {
+                                                                "label": "Auto",
+                                                                "value": "auto",
+                                                                "default": true
+                                                            },
+                                                            {
+                                                                "label": "High",
+                                                                "value": "high"
+                                                            },
+                                                            {
+                                                                "label": "Low",
+                                                                "value": "low"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "default": true
+                                            },
+                                            {
+                                                "label": "Assistant",
+                                                "value": "assistant",
+                                                "nested": [
+                                                    {
+                                                        "help": "Text content of the message on behalf of the selected __Role__.",
+                                                        "name": "content",
+                                                        "type": "text",
+                                                        "label": "Text Content"
+                                                    },
+                                                    {
+                                                        "mode": "edit",
+                                                        "name": "tool_calls",
+                                                        "spec": {
+                                                            "spec": [
+                                                                {
+                                                                    "name": "type",
+                                                                    "type": "hidden",
+                                                                    "default": "function"
+                                                                },
+                                                                {
+                                                                    "help": "Map this directly from the output of a previous **Create a Completion** module. Look for `Choices[]: Message.Tool Calls[]: ID`.",
+                                                                    "name": "id",
+                                                                    "type": "text",
+                                                                    "label": "Tool call ID"
+                                                                },
+                                                                {
+                                                                    "name": "function",
+                                                                    "spec": [
+                                                                        {
+                                                                            "help": "The name of the function previously called.",
+                                                                            "name": "name",
+                                                                            "type": "text",
+                                                                            "label": "Name",
+                                                                            "required": true
+                                                                        },
+                                                                        {
+                                                                            "help": "The arguments previously output by the AI.",
+                                                                            "name": "arguments",
+                                                                            "type": "text",
+                                                                            "label": "Arguments",
+                                                                            "required": true
+                                                                        }
+                                                                    ],
+                                                                    "type": "collection",
+                                                                    "label": "Function"
+                                                                }
+                                                            ],
+                                                            "type": "collection",
+                                                            "label": "Tool Call"
+                                                        },
+                                                        "type": "array",
+                                                        "label": "Tool Calls",
+                                                        "labels": {
+                                                            "add": "Add tool call"
+                                                        },
+                                                        "mappable": {
+                                                            "help": "You can map the entire `Choices[]: Message.Tool Calls` array from a previous Create a Completion module here."
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "label": "Developer / System",
+                                                "value": "system",
+                                                "nested": [
+                                                    {
+                                                        "help": "Text content of the message on behalf of the selected __Role__.",
+                                                        "name": "content",
+                                                        "type": "text",
+                                                        "label": "Text Content"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "label": "Tool",
+                                                "value": "tool",
+                                                "nested": [
+                                                    {
+                                                        "help": "The return of the function. This role should only be used when you have processed a previous function call and want to send the output of the function execution back to the AI.",
+                                                        "name": "content",
+                                                        "type": "text",
+                                                        "label": "Text Content",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "help": "Map this directly from the output of a previous **Create a Completion** module. Look for `Choices[]: Message.Tool Calls[]: ID`.",
+                                                        "name": "tool_call_id",
+                                                        "type": "text",
+                                                        "label": "Tool Call ID.",
+                                                        "required": true
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "required": true
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Message"
+                        },
+                        "type": "array",
+                        "label": "Messages",
+                        "required": true
+                    },
+                    {
+                        "name": "response_format",
+                        "type": "select",
+                        "label": "Response Format",
+                        "validate": {
+                            "enum": [
+                                "text",
+                                "json_object"
+                            ]
+                        }
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "result",
+                        "type": "any",
+                        "label": "Result"
+                    },
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "object",
+                        "type": "text",
+                        "label": "Object"
+                    },
+                    {
+                        "name": "created",
+                        "type": "date",
+                        "label": "Created"
+                    },
+                    {
+                        "name": "model",
+                        "type": "text",
+                        "label": "Model"
+                    },
+                    {
+                        "name": "choices",
+                        "spec": [
+                            {
+                                "name": "text",
+                                "type": "text",
+                                "label": "Text"
+                            },
+                            {
+                                "name": "index",
+                                "type": "number",
+                                "label": "Index"
+                            },
+                            {
+                                "name": "logprobs",
+                                "type": "text",
+                                "label": "Log Probs"
+                            },
+                            {
+                                "name": "finish_reason",
+                                "type": "text",
+                                "label": "Finish Reason"
+                            },
+                            {
+                                "name": "message",
+                                "spec": [
+                                    {
+                                        "name": "role",
+                                        "type": "text",
+                                        "label": "Role"
+                                    },
+                                    {
+                                        "name": "content",
+                                        "type": "text",
+                                        "label": "Content"
+                                    },
+                                    {
+                                        "name": "tool_calls",
+                                        "spec": [
+                                            {
+                                                "name": "id",
+                                                "type": "text",
+                                                "label": "ID"
+                                            },
+                                            {
+                                                "name": "type",
+                                                "type": "text",
+                                                "label": "Type"
+                                            },
+                                            {
+                                                "name": "function",
+                                                "spec": [
+                                                    {
+                                                        "name": "name",
+                                                        "type": "text",
+                                                        "label": "Name"
+                                                    },
+                                                    {
+                                                        "name": "arguments",
+                                                        "type": "text",
+                                                        "label": "Arguments"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "Function"
+                                            }
+                                        ],
+                                        "type": "array",
+                                        "label": "Tool Calls"
+                                    },
+                                    {
+                                        "name": "refusal",
+                                        "type": "text",
+                                        "label": "Refusal"
+                                    },
+                                    {
+                                        "name": "annotations",
+                                        "spec": [
+                                            {
+                                                "name": "type",
+                                                "type": "text",
+                                                "label": "Type"
+                                            },
+                                            {
+                                                "name": "url_citation",
+                                                "spec": [
+                                                    {
+                                                        "name": "end_index",
+                                                        "type": "number",
+                                                        "label": "End Index"
+                                                    },
+                                                    {
+                                                        "name": "start_index",
+                                                        "type": "number",
+                                                        "label": "Start Index"
+                                                    },
+                                                    {
+                                                        "name": "title",
+                                                        "type": "text",
+                                                        "label": "Title"
+                                                    },
+                                                    {
+                                                        "name": "url",
+                                                        "type": "text",
+                                                        "label": "URL"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "URL Citation"
+                                            }
+                                        ],
+                                        "type": "array",
+                                        "label": "Annotations"
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "Message"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Choices"
+                    },
+                    {
+                        "name": "usage",
+                        "spec": [
+                            {
+                                "name": "prompt_tokens",
+                                "type": "number",
+                                "label": "Prompt Tokens"
+                            },
+                            {
+                                "name": "completion_tokens",
+                                "type": "text",
+                                "label": "Completion Tokens"
+                            },
+                            {
+                                "name": "total_tokens",
+                                "type": "number",
+                                "label": "Total Tokens"
+                            },
+                            {
+                                "name": "prompt_tokens_details",
+                                "spec": [
+                                    {
+                                        "name": "cached_tokens",
+                                        "type": "uinteger",
+                                        "label": "Cached Tokens"
+                                    },
+                                    {
+                                        "name": "text_tokens",
+                                        "type": "uinteger",
+                                        "label": "Text Tokens"
+                                    },
+                                    {
+                                        "name": "image_tokens",
+                                        "type": "uinteger",
+                                        "label": "Image Tokens"
+                                    },
+                                    {
+                                        "name": "audio_tokens",
+                                        "type": "uinteger",
+                                        "label": "Audio Tokens"
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "Prompt Tokens Details"
+                            },
+                            {
+                                "name": "completion_tokens_details",
+                                "spec": [
+                                    {
+                                        "name": "reasoning_tokens",
+                                        "type": "uinteger",
+                                        "label": "Reasoning Tokens"
+                                    },
+                                    {
+                                        "name": "text_tokens",
+                                        "type": "uinteger",
+                                        "label": "Text Tokens"
+                                    },
+                                    {
+                                        "name": "audio_tokens",
+                                        "type": "uinteger",
+                                        "label": "Audio Tokens"
+                                    },
+                                    {
+                                        "name": "accepted_prediction_tokens",
+                                        "type": "uinteger",
+                                        "label": "Accepted Prediction Tokens"
+                                    },
+                                    {
+                                        "name": "rejected_prediction_tokens",
+                                        "type": "uinteger",
+                                        "label": "Rejected Prediction Tokens"
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "Completion Tokens Details"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Usage"
+                    },
+                    {
+                        "name": "service_tier",
+                        "type": "text",
+                        "label": "Service Tier"
+                    },
+                    {
+                        "name": "system_fingerprint",
+                        "type": "text",
+                        "label": "System Fingerprint"
+                    }
+                ],
+                "advanced": true
+            }
+        },
+        {
+            "id": 67,
+            "module": "json:ParseJSON",
+            "version": 1,
+            "parameters": {
+                "type": 590436
+            },
+            "mapper": {
+                "json": "{{64.result}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": -457,
+                    "y": -580,
+                    "name": "Parse AI Decision Payload"
+                },
+                "restore": {
+                    "parameters": {
+                        "type": {
+                            "label": "openai_result_schema"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "type",
+                        "type": "udt",
+                        "label": "Data structure"
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "json",
+                        "type": "text",
+                        "label": "JSON string",
+                        "required": true
+                    }
+                ],
+                "interface": [
+                    {
+                        "help": "",
+                        "name": "decision",
+                        "spec": [
+                            {
+                                "help": "",
+                                "name": "risk_level",
+                                "type": "text",
+                                "label": "Risk level",
+                                "default": null,
+                                "required": false,
+                                "multiline": false
+                            },
+                            {
+                                "help": "",
+                                "name": "priority",
+                                "type": "text",
+                                "label": "Priority",
+                                "default": null,
+                                "required": false,
+                                "multiline": false
+                            },
+                            {
+                                "help": "",
+                                "name": "stuck_stage",
+                                "type": "text",
+                                "label": "Stuck stage",
+                                "default": null,
+                                "required": false,
+                                "multiline": false
+                            },
+                            {
+                                "help": "",
+                                "name": "root_cause",
+                                "type": "text",
+                                "label": "Root cause",
+                                "default": null,
+                                "required": false,
+                                "multiline": false
+                            },
+                            {
+                                "help": "",
+                                "name": "business_impact",
+                                "type": "text",
+                                "label": "Business impact",
+                                "default": null,
+                                "required": false,
+                                "multiline": false
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Decision",
+                        "required": false
+                    },
+                    {
+                        "help": "",
+                        "name": "recommended_actions",
+                        "spec": {
+                            "type": "text",
+                            "default": null,
+                            "required": false,
+                            "multiline": false
+                        },
+                        "type": "array",
+                        "label": "Recommended actions",
+                        "required": false
+                    },
+                    {
+                        "help": "",
+                        "name": "reasoning",
+                        "spec": [
+                            {
+                                "help": "",
+                                "name": "summary",
+                                "type": "text",
+                                "label": "Summary",
+                                "default": null,
+                                "required": false,
+                                "multiline": false
+                            },
+                            {
+                                "help": "",
+                                "name": "confidence",
+                                "type": "number",
+                                "label": "Confidence",
+                                "default": null,
+                                "required": false
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Reasoning",
+                        "required": false
+                    },
+                    {
+                        "help": "",
+                        "name": "email",
+                        "spec": [
+                            {
+                                "help": "",
+                                "name": "required",
+                                "type": "boolean",
+                                "label": "Required",
+                                "required": false
+                            },
+                            {
+                                "help": "",
+                                "name": "email_type",
+                                "type": "text",
+                                "label": "Email type",
+                                "default": null,
+                                "required": false,
+                                "multiline": false
+                            },
+                            {
+                                "help": "",
+                                "name": "subject",
+                                "type": "text",
+                                "label": "Subject",
+                                "default": null,
+                                "required": false,
+                                "multiline": false
+                            },
+                            {
+                                "help": "",
+                                "name": "body",
+                                "type": "text",
+                                "label": "Body",
+                                "default": null,
+                                "required": false,
+                                "multiline": false
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Email",
+                        "required": false
+                    },
+                    {
+                        "help": "",
+                        "name": "salesforce_task",
+                        "spec": [
+                            {
+                                "help": "",
+                                "name": "required",
+                                "type": "boolean",
+                                "label": "Required",
+                                "required": false
+                            },
+                            {
+                                "help": "",
+                                "name": "priority",
+                                "type": "text",
+                                "label": "Priority",
+                                "default": null,
+                                "required": false,
+                                "multiline": false
+                            },
+                            {
+                                "help": "",
+                                "name": "subject",
+                                "type": "text",
+                                "label": "Subject",
+                                "default": null,
+                                "required": false,
+                                "multiline": false
+                            },
+                            {
+                                "help": "",
+                                "name": "description",
+                                "type": "text",
+                                "label": "Description",
+                                "default": null,
+                                "required": false,
+                                "multiline": false
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Salesforce task",
+                        "required": false
+                    },
+                    {
+                        "help": "",
+                        "name": "hubspot",
+                        "spec": [
+                            {
+                                "help": "",
+                                "name": "required",
+                                "type": "boolean",
+                                "label": "Required",
+                                "required": false
+                            },
+                            {
+                                "help": "",
+                                "name": "sequence_name",
+                                "type": "text",
+                                "label": "Sequence name",
+                                "default": null,
+                                "required": false,
+                                "multiline": false
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Hubspot",
+                        "required": false
+                    },
+                    {
+                        "help": "",
+                        "name": "slack",
+                        "spec": [
+                            {
+                                "help": "",
+                                "name": "required",
+                                "type": "boolean",
+                                "label": "Required",
+                                "required": false
+                            },
+                            {
+                                "help": "",
+                                "name": "message",
+                                "type": "text",
+                                "label": "Message",
+                                "default": null,
+                                "required": false,
+                                "multiline": false
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Slack",
+                        "required": false
+                    }
+                ]
+            }
+        },
+        {
+            "id": 56,
+            "module": "builtin:BasicRouter",
+            "version": 1,
+            "mapper": null,
+            "metadata": {
+                "designer": {
+                    "x": -130,
+                    "y": -576,
+                    "name": "Execute GTM Recovery Actions"
+                }
+            },
+            "routes": [
+                {
+                    "flow": [
+                        {
+                            "id": 65,
+                            "module": "util:SetVariable2",
+                            "version": 1,
+                            "parameters": {},
+                            "filter": {
+                                "name": "Email Recovery Required",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{67.email.required}}",
+                                            "b": "true",
+                                            "o": "text:equal"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "name": "html_email",
+                                "scope": "roundtrip",
+                                "value": "{{67.email.body}}"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 316,
+                                    "y": -850,
+                                    "name": "Send AI Personalized Recovery Email"
+                                },
+                                "restore": {
+                                    "expect": {
+                                        "scope": {
+                                            "label": "One cycle"
+                                        }
+                                    }
+                                },
+                                "expect": [
+                                    {
+                                        "name": "name",
+                                        "type": "text",
+                                        "label": "Variable name",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "scope",
+                                        "type": "select",
+                                        "label": "Variable lifetime",
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "roundtrip",
+                                                "execution"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "value",
+                                        "type": "any",
+                                        "label": "Variable value"
+                                    }
+                                ],
+                                "interface": [
+                                    {
+                                        "name": "html_email",
+                                        "type": "any",
+                                        "label": "html_email"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 73,
+                            "module": "util:SetVariable2",
+                            "version": 1,
+                            "parameters": {},
+                            "filter": {
+                                "name": "Sales Intervention Required",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{67.salesforce_task.required}}",
+                                            "b": "true",
+                                            "o": "text:equal"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "name": "html_email",
+                                "scope": "roundtrip",
+                                "value": "{\r\n  \"Subject\": \"{{67.salesforce_task.subject}}\",\r\n  \"Description\": \"{{67.salesforce_task.description}}\",\r\n  \"Priority\": \"{{67.salesforce_task.priority}}\",\r\n  \"Status\": \"Not Started\",\r\n  \"WhoId\": \"00Q8d000009ABC\",\r\n  \"OwnerId\": \"0058d000001XYZ\",\r\n  \"ActivityDate\": \"2026-06-11\",\r\n  \"Type\": \"Follow-up\"\r\n}"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 457,
+                                    "y": -538,
+                                    "name": "Create Salesforce Follow-Up Task"
+                                },
+                                "restore": {
+                                    "expect": {
+                                        "scope": {
+                                            "label": "One cycle"
+                                        }
+                                    }
+                                },
+                                "expect": [
+                                    {
+                                        "name": "name",
+                                        "type": "text",
+                                        "label": "Variable name",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "scope",
+                                        "type": "select",
+                                        "label": "Variable lifetime",
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "roundtrip",
+                                                "execution"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "value",
+                                        "type": "any",
+                                        "label": "Variable value"
+                                    }
+                                ],
+                                "interface": [
+                                    {
+                                        "name": "html_email",
+                                        "type": "any",
+                                        "label": "html_email"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 74,
+                            "module": "util:SetVariable2",
+                            "version": 1,
+                            "parameters": {},
+                            "filter": {
+                                "name": "Marketing Nurture Required",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{67.hubspot.required}}",
+                                            "b": "true",
+                                            "o": "text:equal"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "name": "Hubspot contact",
+                                "scope": "roundtrip",
+                                "value": "In production this property would trigger a HubSpot workflow or sequence. For the PoC I simulate the enrollment by updating HubSpot contact properties.\nactivation_sequence = {{67.hubspot.sequence_name}}"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 450,
+                                    "y": -254,
+                                    "name": "Enroll Contact in HubSpot Sequence"
+                                },
+                                "restore": {
+                                    "expect": {
+                                        "scope": {
+                                            "label": "One cycle"
+                                        }
+                                    }
+                                },
+                                "expect": [
+                                    {
+                                        "name": "name",
+                                        "type": "text",
+                                        "label": "Variable name",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "scope",
+                                        "type": "select",
+                                        "label": "Variable lifetime",
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "roundtrip",
+                                                "execution"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "value",
+                                        "type": "any",
+                                        "label": "Variable value"
+                                    }
+                                ],
+                                "interface": [
+                                    {
+                                        "name": "Hubspot contact",
+                                        "type": "any",
+                                        "label": "Hubspot contact"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 75,
+                            "module": "util:SetVariable2",
+                            "version": 1,
+                            "parameters": {},
+                            "filter": {
+                                "name": "GTM Team Notification Required",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{67.slack.required}}",
+                                            "b": "true",
+                                            "o": "text:equal"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "name": "Update Hubspot contact",
+                                "scope": "roundtrip",
+                                "value": "{{67.slack.message}}"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 147,
+                                    "y": -36,
+                                    "name": "Send GTM Risk Alert"
+                                },
+                                "restore": {
+                                    "expect": {
+                                        "scope": {
+                                            "label": "One cycle"
+                                        }
+                                    }
+                                },
+                                "expect": [
+                                    {
+                                        "name": "name",
+                                        "type": "text",
+                                        "label": "Variable name",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "scope",
+                                        "type": "select",
+                                        "label": "Variable lifetime",
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "roundtrip",
+                                                "execution"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "value",
+                                        "type": "any",
+                                        "label": "Variable value"
+                                    }
+                                ],
+                                "interface": [
+                                    {
+                                        "name": "Update Hubspot contact",
+                                        "type": "any",
+                                        "label": "Update Hubspot contact"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu2.make.com",
+        "notes": []
+    }
+}
